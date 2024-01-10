@@ -42,7 +42,7 @@ def add_course():
     display_courses(course_list)
 
 def calculate_gpa():
-    gpa_list = [4.00, 4.00, 3.67, 3.33, 3.00, 2.67, 2.33, 2.00, 1.67, 1.33, 1.00, 0.67]
+    gpa_list = [4.00, 4.00, 3.67, 3.33, 3.00, 2.67, 2.33, 2.00, 1.67, 1.33, 1.00, 0.67, 0]
     course_list = []
     try:
         course_list = get_courses_from_file()
