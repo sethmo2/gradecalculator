@@ -11,9 +11,10 @@ def write_courses_to_file(course_list):
 
 def display_courses(course_list):
     print("\n")
-    print("Course  Hours  Grade")
+    print("Course     Hours   Grade")
     for course in course_list:
-        print(f"{course['name']:8} {course['hours']:7} {course['grade']:2}")
+        print(f"{course['name']:10} {course['hours']:7} {course['grade']:2}")
+    print("\n")
     
 def add_course():
     course_list = []
@@ -97,3 +98,18 @@ def calculate_gpa():
     print("\n")
     print("GPA:")
     print(gpa)
+
+def remove_course():
+    course_list = []
+    course_list = get_courses_from_file()
+    display_courses(course_list)
+    name = input("Course to remove: ")
+    index = 0
+    for course in course_list:
+        if course["name"] == name:
+            del course_list[index]
+            write_courses_to_file(course_list)
+            print("Delete successful!")
+            return
+        index = index + 1
+    print("No such course")
