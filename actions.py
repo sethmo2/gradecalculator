@@ -24,6 +24,12 @@ def add_course():
     display_courses(course_list)
     while True:
         name = input("Enter Course Name: ")
+        for course in course_list:
+            if course["name"] == name:
+                print("\n")
+                print("Already in the database!")
+                return
+            
         hours = input("Credit Hours: ")
         grade = input("Grade: ")
         course = {"name": name, "hours": hours, "grade": grade}
