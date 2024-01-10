@@ -1,4 +1,4 @@
-course_data\.json\
+*.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
