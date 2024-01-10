@@ -10,11 +10,18 @@ while True:
     user_choice = input("What would you like to do?: ")
     if user_choice == "0":
         break
-    if user_choice == "1":
+    elif user_choice == "1":
         course_list = []
         course_list = get_courses_from_file()
         display_courses(course_list)
-    if user_choice == "2":
+        print("\n")
+    elif user_choice == "2":
         add_course()
-    if user_choice == "3":
+        print("\n")
+    elif user_choice == "3":
         calculate_gpa()
+        print("\n")
+    else:
+        print("\n")
+        print("Enter a valid option")
+        print("\n")

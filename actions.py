@@ -14,7 +14,6 @@ def display_courses(course_list):
     print("Course  Hours  Grade")
     for course in course_list:
         print(f"{course['name']:8} {course['hours']:7} {course['grade']:2}")
-    print("\n")
     
 def add_course():
     course_list = []
@@ -89,4 +88,6 @@ def calculate_gpa():
             quality_points = quality_points + gpa_list[12] * credit_hours
             gpa_hours = gpa_hours + credit_hours
     gpa = quality_points / gpa_hours
+    print("\n")
+    print("GPA:")
     print(gpa)
