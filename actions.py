@@ -24,20 +24,20 @@ def add_course():
         print("No courses!")
     display_courses(course_list)
     while True:
-        name = input("Enter Course Name: ")
+        name = input("Enter Course Name (or type 'exit'): ")
+        if name in ['exit', '0']:
+            break
         for course in course_list:
             if course["name"] == name:
                 print("\n")
                 print("Already in the database!")
-                return
+                write_courses_to_file(course_list)
+                return  
             
         hours = input("Credit Hours: ")
         grade = input("Grade: ")
         course = {"name": name, "hours": hours, "grade": grade}
         course_list.append(course)
-        status = input("Type yes if done: ")
-        if status in ['yes']:
-            break
     write_courses_to_file(course_list)
     display_courses(course_list)
 
@@ -97,7 +97,7 @@ def calculate_gpa():
     gpa = quality_points / gpa_hours
     print("\n")
     print("GPA:")
-    print(gpa)
+    print(round(gpa, 2))
 
 def remove_course():
     course_list = []
